@@ -21,3 +21,17 @@ def get_db():
     """)
     return conn
 
+def main():
+    if len(sys.argv) < 2:
+        print("usage: python scrapper.py <command>")
+        sys.exit(1)
+
+    cmd = sys.argv[1]
+    if cmd == "init":
+        get_db()
+        print("db ready")
+    else:
+        print(f"unknown command {cmd}")
+
+if __name__ == "__main__":
+    main()
